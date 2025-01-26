@@ -7,9 +7,8 @@ flowchart TD
  B --> H@{ shape: diamond, label: "Is the guess a number?" }
  H -- Yes --> J@{ shape: diamond, label: "Is the guess in range?" }
  H -- No --> I([Invalid input. Try again.]) --> B
- J -- Yes --> C
+ J -- Yes --> C@{ shape: diamond, label: "Is the guess correct?" }
  J -- No --> I
- B --> C@{ shape: diamond, label: "Is the guess correct?" }
  C -- Yes --> D([Congratulations! You got it right!])
  C -- No --> E@{ shape: diamond, label: "Is it too high or too low?" }
  E -- Too high --> F([Too high. Guess again.]) --> B
