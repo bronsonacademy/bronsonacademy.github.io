@@ -1,21 +1,24 @@
-## Number Guessing Game Flowchart
+# Number Guessing Game Flowchart
 
 
 ```mermaid
 flowchart TD
-    A[Start] --> B[Set range for random number]
-    B --> C[Generate random number within range]
-    C --> D[Initialize user guess]
-    D --> E[Prompt user for guess]
-    E --> F{Is the guess correct?}
-    F -->|Yes| G[Display "Correct! You guessed the number!"]
-    F -->|No| H{Is the guess too high?}
-    H -->|Yes| I[Display "Your guess is too high"]
-    H -->|No| J[Display "Your guess is too low"]
-    I --> K[Prompt user for another guess]
-    J --> K[Prompt user for another guess]
-    K --> F
-    G --> L[End]
+    Start([Start]) --> InputRange[Input range for random number]
+    InputRange --> GenerateRandom[Generate random number within range]
+    GenerateRandom --> UserGuess[Prompt user to guess the number]
+    UserGuess --> CompareGuess{Is the guess correct?}
+    
+    CompareGuess -->|Too High| FeedbackHigh[Inform "Too high"]
+    FeedbackHigh --> UserGuess
+    
+    CompareGuess -->|Too Low| FeedbackLow[Inform "Too low"]
+    FeedbackLow --> UserGuess
+    
+    CompareGuess -->|Correct| Congratulate[Congratulate the user]
+    Congratulate --> PlayAgain{Play again?}
+    
+    PlayAgain -->|Yes| InputRange
+    PlayAgain -->|No| End([End])
 ```
 
 
