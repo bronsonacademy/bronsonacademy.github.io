@@ -13,4 +13,4 @@ flowchart TD
 
 
 ### How it Works
-*The game begins by setting a range for the random number and generating the target number within that range. The user is prompted to guess the number, and the program evaluates whether the guess is correct. If the guess matches the target, a success message is displayed, and the game ends. If the guess is incorrect, the program determines whether it is too high or too low, provides feedback, and prompts the user to guess again. This process loops until the correct number is guessed, after which the game displays a congratulatory message and concludes.*
+*The process begins with the computer generating a random number. The player inputs a guess, which the game evaluates to check if it's correct. If the guess is correct, the player is congratulated, and the game ends. If incorrect, the game determines if the guess is too high or too low and provides feedback accordingly. The player then guesses again, repeating the process until the correct number is guessed.*
