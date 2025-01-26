@@ -3,22 +3,12 @@
 
 ```mermaid
 flowchart TD
-    Start([Start]) --> InputRange[Input range for random number]
-    InputRange --> GenerateRandom[Generate random number within range]
-    GenerateRandom --> UserGuess[Prompt user to guess the number]
-    UserGuess --> CompareGuess{Is the guess correct?}
-    
-    CompareGuess -->|Too High| FeedbackHigh[Inform "Too high"]
-    FeedbackHigh --> UserGuess
-    
-    CompareGuess -->|Too Low| FeedbackLow[Inform "Too low"]
-    FeedbackLow --> UserGuess
-    
-    CompareGuess -->|Correct| Congratulate[Congratulate the user]
-    Congratulate --> PlayAgain{Play again?}
-    
-    PlayAgain -->|Yes| InputRange
-    PlayAgain -->|No| End([End])
+ A([Generate random number]) --> B([Player guess input]) 
+ B --> C([Is the guess correct?])
+ C -- Yes --> D([Congratulations! You got it right!])
+ C -- No --> E([Is it too high or too low?])
+ E -- Too high --> F([Too high. Guess again.]) --> B
+ E -- Too low --> G([Too low. Guess again.]) --> B
 ```
 
 
