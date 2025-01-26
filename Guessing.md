@@ -4,9 +4,9 @@
 ```mermaid
 flowchart TD
  A([Generate random number]) --> B([Player guess input]) 
- B --> C([Is the guess correct?])
+ B --> C@{ shape: diamond, label: "Is the guess correct?" }
  C -- Yes --> D([Congratulations! You got it right!])
- C -- No --> E([Is it too high or too low?])
+ C -- No --> E@{ shape: diamond, label: "Is it too high or too low? }
  E -- Too high --> F([Too high. Guess again.]) --> B
  E -- Too low --> G([Too low. Guess again.]) --> B
 ```
