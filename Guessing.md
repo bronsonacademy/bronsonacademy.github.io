@@ -5,9 +5,8 @@
 flowchart TD
  A([Generate random number and set the range]) --> B([Player guess input])
  B --> H@{ shape: diamond, label: "Is the guess a number?" }
- H -- Yes --> J
+ H -- Yes --> J@{ shape: diamond, label: "Is the guess in range?" }
  H -- No --> I([Invalid input. Try again.]) --> B
- B --> J@{ shape: diamond, label: "Is the guess in range?" }
  J -- Yes --> C
  J -- No --> I
  B --> C@{ shape: diamond, label: "Is the guess correct?" }
